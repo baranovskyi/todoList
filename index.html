@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Todo</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	</head>
+	<body class="mt-5 bg-primary">
+		<header class="container bg-danger border rounded mb-4">
+			<div class="p-2">
+				<h1>Welcome<span id="curUser"></span></h1>
+			</div>
+		</header>
+		<main class="container bg-warning border rounded mt-2 pb-3">
+			<div class="row">
+				<form action="#" id="createPersonForm" class="col-6" onsubmit="createPerson();return false;">
+					<div class="row pt-3">
+						<div class="col-6">
+							<input class="form-control" name="name" type="text" placeholder="Name" required>
+						</div>
+						<div class="col-6">
+							<input class="form-control" name="surname" type="text" placeholder="Surname" required>
+						</div>
+					</div>
+					<div class="row pt-3">
+						<div class="col-6">
+							<input class="form-control" name="specialization" type="text" placeholder="Specialization">
+						</div>
+						<div class="col-6">
+							<input class="form-control" name="jobtitle" type="text" placeholder="Job title">
+						</div>
+					</div>
+					<div class="row pt-3">
+						<div class="col-12">
+							<select class="form-control" name="role">
+								<option value="user">User</option>
+								<option value="student">Student</option>
+								<option value="developer">Developer</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<button class="btn mt-3">Create user</button>
+						</div>
+					</div>
+				</form>
+				<!--  -->
+				<div id="rightPanel" class="col-6 pt-3 d-none">
+					<div class="nav nav-tabs" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link text-success" id="nav-simpletask-tab" data-toggle="tab" href="#nav-simpletask" role="tab" aria-controls="nav-simpletask" aria-selected="true">Simple Task</a>
+						<a class="nav-item nav-link text-success" id="nav-hometask-tab" data-toggle="tab" href="#nav-hometask" role="tab" aria-controls="nav-hometask" aria-selected="false">Home Task</a>
+						<a class="nav-item nav-link text-success" id="nav-projecttask-tab" data-toggle="tab" href="#nav-projecttask" role="tab" aria-controls="nav-projecttask" aria-selected="false">Project Task</a>
+					</div>
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="nav-simpletask" role="tabpanel" aria-labelledby="nav-simpletask-tab">
+							<form action="#" id="simpletaskform" onsubmit="createTask(this); return false;">
+								<div class="row pt-3">
+									<div class="col-6">
+										<input class="form-control" name="title" type="text" placeholder="Title" required>
+									</div>
+									<div class="col-6">
+										<input class="form-control" name="status" type="text" placeholder="Status" required>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12">
+										<button class="btn mt-3">Create task</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="tab-pane fade" id="nav-hometask" role="tabpanel" aria-labelledby="nav-hometask-tab">
+							<form action="#" id="hometaskform" onsubmit="createTask(this); return false;">
+								<div class="row pt-3">
+									<div class="col-6">
+										<input class="form-control" name="title" type="text" placeholder="Title" required>
+									</div>
+									<div class="col-6">
+										<input class="form-control" name="status" type="text" placeholder="Status" required>
+									</div>
+								</div>
+								<div class="container">
+									<div class="row pt-3">
+										<textarea class="form-control" name="description" rows="5" required></textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12">
+										<button class="btn mt-3">Create task</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="tab-pane fade" id="nav-projecttask" role="tabpanel" aria-labelledby="nav-projecttask-tab">
+							<form action="#" id="projecttaskform" onsubmit="createTask(this); return false;">
+								<div class="row pt-3">
+									<div class="col-6">
+										<input class="form-control" name="title" type="text" placeholder="Title" required>
+									</div>
+									<div class="col-6">
+										<input class="form-control" name="status" type="text" placeholder="Status" required>
+									</div>
+								</div>
+								<div class="row pt-3">
+									<div class="col-12">
+										<input class="form-control" name="deadlinedate" type="date" required>
+									</div>
+								</div>
+								<div class="container">
+									<div class="row pt-3">
+										<textarea class="form-control" name="description" rows="5" required></textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12">
+										<button class="btn mt-3">Create task</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="container bg-light rounded mt-4">
+			<ul id="tasklist" class="list-group list-group-flush">
+				
+			</ul>
+		</footer>
+		<script type="text/javascript" src="jquery-3.2.1.slim.min.js"></script>
+		<script type="text/javascript" src="bootstrap.min.js"></script>
+		<script type="text/javascript" src="users.js"></script>
+		<script type="text/javascript" src="tasks.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>
